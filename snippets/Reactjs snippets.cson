@@ -246,10 +246,10 @@
 
   # Proptype : object
   'React: object':
-    prefix: 'ptobj'
+    prefix: 'pto'
     body: 'PropTypes.object${1:,}'
   'React: object.isRequired':
-    prefix: 'ptobjr'
+    prefix: 'ptor'
     body: 'PropTypes.object.isRequired${1:,}'
 
   # Proptype : string
