@@ -1,6 +1,6 @@
 {
   "name": "atom-reactjs-snippets",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "React ES6/7 snippets for Atom",
   "repository": {
     "type": "git",
@@ -17,8 +17,8 @@
   "author": "Fabrice Pomata",
   "license": "MIT",
   "engines": {
-  "atom": ">=1.0.0 <2.0.0"
-},
+    "atom": ">=1.0.0 <2.0.0"
+  },
   "dependencies": {},
   "bugs": {
     "url": "https://github.com/Lakston/atom-reactjs-snippets/issues"
