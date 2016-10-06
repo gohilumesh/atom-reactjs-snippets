@@ -27,7 +27,6 @@
     ReactDOM.render(${1}, document.getElementById(${2}));
     """
 
-
 ########################
 # Creating new Components
 #######################
@@ -119,6 +118,16 @@
       constructor(props) {
         super(props);
         this.state = { ${1} }
+      }
+    """
+  # Render
+  'React: constructor':
+    prefix: 'rren'
+    body: """
+      render() {
+        return (
+          ${1:<div></div>}
+        );
       }
     """
 
