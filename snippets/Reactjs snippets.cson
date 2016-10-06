@@ -1,0 +1,311 @@
+######################
+## atom-reactjs-snippets ##
+######################
+
+# Github Repo : https://github.com/Lakston/atom-reactjs-snippets
+
+'.source.js.jsx':
+
+#######################
+# Import React and ReactDOM
+#######################
+
+  "React: import React":
+    prefix: "ri"
+    body: """
+    import React, { Component, PropTypes } from 'react';
+
+    ${1}
+    """
+
+  # React DOM
+  "React: ReactDOM":
+    prefix: "rdom"
+    body: """
+    import ReactDOM from "react-dom";
+
+    ReactDOM.render(${1}, document.getElementById(${2}));
+    """
+
+
+########################
+# Creating new Components
+#######################
+
+  "React: component":
+    prefix: "rc"
+    body: """
+      import React, { Component, PropTypes } from 'react';
+
+      export default class ${1:NewComponent} extends React.Component {
+        static propTypes = {
+          ${2}
+        };
+        render() {
+          return (
+            <div>${3:NewComponent}</div>
+          );
+        }
+      }
+    """
+
+  # With constructor #
+  "React: component w/ constructor":
+    prefix: "rcc"
+    body: """
+      import React, { Component, PropTypes } from 'react';
+
+      export default class ${1:NewComponent} extends React.Component {
+        static propTypes = {
+          ${2}
+        };
+        constructor(props) {
+          super(props);
+          this.state = { };
+        }
+        render() {
+          return (
+            ${3:<div>NewComponent</div>}
+          );
+        }
+      }
+    """
+
+  # Stateless
+  "React: stateless":
+    prefix: "rsc"
+    body: """
+    import React, { PropTypes } from 'react';
+
+    const $1 = (props) => (
+      ${2:<div>NewComponent</div>}
+      );
+
+    ${1}.propTypes = {
+
+          };
+
+    export default ${1}
+    """
+
+#######################
+# State and Props
+#######################
+
+  "React: state":
+    prefix: "rst"
+    body: "this.state.${1}"
+
+  "React: setState":
+    prefix: "rsst"
+    body: """
+      this.setState({
+        ${1}: ${2},
+      });
+    """
+
+  "React: props":
+    prefix: "rpr"
+    body: "this.props.${1}"
+
+#######################
+# Methods
+#######################
+
+  # Constructor
+  'React: constructor':
+    prefix: 'rcon'
+    body: """
+      constructor(props) {
+        super(props);
+        this.state = { ${1} }
+      }
+    """
+
+#######################
+# Bind this
+#######################
+
+  'React: method bind this':
+    prefix: 'rbi',
+    body: """
+      this.${1} = this.${1}.bind(this);
+    """
+
+#######################
+# Component Lifecycles
+#######################
+
+  "React: componentWillMount":
+    prefix: "cwm"
+    body: """
+      componentWillMount() {
+        ${1}
+      }
+    """
+
+  "React: componentDidMount":
+    prefix: "cdm"
+    body:  """
+      componentDidMount() {
+        ${1}
+      }
+    """
+
+  "React: componentWillReceiveProps":
+    prefix: "cwr"
+    body: """
+      componentWillReceiveProps(nextProps) {
+        ${1}
+      }
+    """
+
+  "React: shouldComponentUpdate":
+    prefix: "scu"
+    body: """
+      shouldComponentUpdate(nextProps, nextState) {
+        ${1}
+      }
+    """
+
+  "React: componentWillUpdate":
+    prefix: "cwup"
+    body: """
+      componentWillUpdate(nextProps, nextState) {
+        ${1}
+      }
+    """
+
+  "React: componentDidUpdate":
+    prefix: "cdup"
+    body: """
+      componentDidUpdate(prevProps, prevState) {
+        ${1}
+      }
+    """
+
+  "React: componentWillUnmount()":
+    prefix: "cwu"
+    body: """
+      componentWillUnmount() {
+        ${1}
+      }
+    """
+
+#######################
+# Proptypes
+#######################
+
+  "React: static defaultProps":
+    prefix: "sdp"
+    body: """
+    static defaultProps = {
+      ${1}
+      };
+    """
+
+  "React: static propTypes":
+    prefix: "spt"
+    body: """
+    static propTypes = {
+      ${1}: PropTypes.${2:string}
+      };
+    """
+
+  # Proptype : Array
+  'React: array':
+    prefix: 'pta'
+    body: 'PropTypes.array${1:,}'
+  'React: array.isRequired':
+    prefix: 'ptar'
+    body: 'PropTypes.array.isRequired${1:,}'
+
+    # Proptype : bool
+  'React: bool':
+    prefix: 'ptb'
+    body: 'PropTypes.bool${1:,}'
+  'React: bool.isRequired':
+    prefix: 'ptbr'
+    body: 'PropTypes.bool.isRequired${1:,}'
+
+  # Proptype : function
+  'React: func':
+    prefix: 'ptf'
+    body: 'PropTypes.func${1:,}'
+  'React: func.isRequired':
+    prefix: 'ptfr'
+    body: 'PropTypes.func.isRequired${1:,}'
+
+  # Proptype : number
+  'React: number':
+    prefix: 'ptn'
+    body: 'PropTypes.number${1:,}'
+  'React: number.isRequired':
+    prefix: 'ptnr'
+    body: 'PropTypes.number.isRequired${1:,}'
+
+  # Proptype : object
+  'React: object':
+    prefix: 'ptobj'
+    body: 'PropTypes.object${1:,}'
+  'React: object.isRequired':
+    prefix: 'ptobjr'
+    body: 'PropTypes.object.isRequired${1:,}'
+
+  # Proptype : string
+  'React: string':
+    prefix: 'pts'
+    body: 'PropTypes.string${1:,}'
+  'React: string.isRequired':
+    prefix: 'ptsr'
+    body: 'PropTypes.string.isRequired${1:,}'
+
+  # Proptype : element
+
+  'React: PropTypes.element':
+    prefix: 'pte'
+    body: '${1:myProp}: PropTypes.element${2:,}'
+
+  'React: PropTypes.element.isRequired':
+    prefix: 'pter'
+    body: '${1:myProp}: PropTypes.element.isRequired${2:,}'
+
+  # Proptype : shape
+  'React: shape':
+    prefix: 'ptsh'
+    body: """
+    PropTypes.shape({
+      ${1}
+    })${2:,}
+  """
+  'React: shape.isRequired':
+    prefix: 'ptshr'
+    body: """
+    PropTypes.shape({
+      ${1}
+    }).isRequired${2:,}
+  """
+
+  # Proptype : oneOf
+  'React: oneOf':
+    prefix: 'ptoo'
+    body: '${1:myProp}: PropTypes.oneOf([$2])${3:,}'
+  'React: oneOf.isRequired':
+    prefix: 'ptoor'
+    body: '${1:myProp}: PropTypes.oneOf([${2:Thing 1}, ${3:Thing 2}]).isRequired${4:,}'
+
+  # Proptype : oneOfType
+  'React: oneOfType':
+    prefix: 'ptoot'
+    body: '${1:myProp}: PropTypes.oneOfType([$2])${3:,}'
+  'React: oneOfType.isRequired':
+    prefix: 'ptootr'
+    body: '${1:myProp}: PropTypes.oneOfType([$2]).isRequired${3:,}'
+
+  # Proptype : any
+  'React: any':
+    prefix: 'ptany'
+    body: 'PropTypes.any${1:,}'
+  'React: any.isRequired':
+    prefix: 'ptanyr'
+    body: 'PropTypes.any.isRequired${1:,}'
