@@ -1,6 +1,6 @@
 {
   "name": "atom-reactjs-snippets",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "React ES6/7 snippets for Atom",
   "repository": {
     "type": "git",
