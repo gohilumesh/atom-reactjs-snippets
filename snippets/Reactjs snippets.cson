@@ -4,7 +4,7 @@
 
 # Github Repo : https://github.com/Lakston/atom-reactjs-snippets
 
-'.source.js.jsx':
+'.source.js':
 
 #######################
 # Import React and ReactDOM
